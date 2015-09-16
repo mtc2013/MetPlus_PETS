@@ -17,3 +17,7 @@ Given(/^I activate user "([^"]*)"$/) do |email|
   user = User.find_by_email(email)
   expect(user.activate(user.activation_token)).to be true
 end
+
+When(/^I attach the resume "(.*?)"$/) do |file_name|
+  page.attach_file("job_seeker_resume", "features/support/uploads/#{file_name}", visible: false)
+end

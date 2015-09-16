@@ -19,6 +19,7 @@ Feature: User Registration
       | Email                 | johndoe@place.com  |
       | Password              | 12345678|
       | Password confirmation | 12345678|
+    And I attach the resume "sample_resume.docx"
     And I press "Register"
     Then I should see "Registration successful"
     And I should see "email to active your account"

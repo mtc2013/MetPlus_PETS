@@ -1,5 +1,6 @@
 .form_div
   = form_for(@user, :remote=> true, :url => @url, html: {role: :form, 'data-model' => @params_key}) do |f|
+    = form_authenticity_token
     .form_field
       = f.label :first_name
       = f.text_field :first_name, :placeholder => 'John'
@@ -21,9 +22,9 @@
       = f.label :password_confirmation
       = f.password_field :password_confirmation
       .help-block
-    = form_tag  do
+    .form_field
       = f.label :resume
-      = file_field_tag("resume")
+      = f.file_field :resume
     - if @user.instance_of? JobSeeker
       .form_field
         = f.label :job_search_status

@@ -1,6 +1,6 @@
 .form_div
   = form_for(@user, :remote=> true, :url => @url, html: {role: :form, 'data-model' => @params_key}) do |f|
-    = form_authenticity_token
+    = token_tag form_authenticity_token
     .form_field
       = f.label :first_name
       = f.text_field :first_name, :placeholder => 'John'
